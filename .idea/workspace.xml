@@ -4,37 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3eb49da9-35a2-43e7-a244-1639ad79546e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/law-analysator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/analytics/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/config_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/paths.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/report/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings/dev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings/prod.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/analytics/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/diff/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/parser/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/utils.py" afterDir="false" />
+    <list default="true" id="3eb49da9-35a2-43e7-a244-1639ad79546e" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/base_strategy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/change.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/change_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/change_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/diff_engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/structure_diff_strategy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/text_diff_strategy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/base_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/document/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/document/document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/document/node.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/document/node_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/odt_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/parser_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/pdf_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/hierarchy_builder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/law_structure_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/text_preprocessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/token.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/token_patterns.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/token_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/structure/tokenizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/txt_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/cache/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/cache/diff_cache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/cache/parsed_cache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/models/document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/models/version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/repositories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/repositories/document_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/repositories/version_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/services/integrity_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/services/versioning_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/diff/test_diff_engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/parser/test_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/parser/test_parser_tree_structure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/utils.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +86,24 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/devdata/projects/law-analysator/src/parser/structure&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/parser/structure" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/parser/document" />
+      <recent name="$PROJECT_DIR$/src/parser/structure" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/tests/resources/versioned_files" />
+      <recent name="$PROJECT_DIR$/src/parser" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="law-analysator" />
@@ -115,6 +148,30 @@
       <option name="presentableId" value="Default" />
       <updated>1773154269258</updated>
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1773236330719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773236330719</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>
