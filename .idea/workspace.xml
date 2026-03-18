@@ -4,55 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3eb49da9-35a2-43e7-a244-1639ad79546e" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/base_strategy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/change.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/change_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/change_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/diff_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/structure_diff_strategy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diff/text_diff_strategy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/base_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/document/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/document/document.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/document/node.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/document/node_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/exceptions.py" afterDir="false" />
+    <list default="true" id="3eb49da9-35a2-43e7-a244-1639ad79546e" name="Changes" comment="feat (parser + diff) : completed &amp; tested parser, diff">
       <change afterPath="$PROJECT_DIR$/src/parser/odt_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/parser_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/pdf_parser.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/parser/structure/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/hierarchy_builder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/law_structure_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/text_preprocessor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/token.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/token_patterns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/token_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/structure/tokenizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/txt_parser.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/cache/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/cache/diff_cache.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/cache/parsed_cache.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/exceptions.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/models/base.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/models/document.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/models/version.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/repositories/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/repositories/document_repository.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/repositories/version_repository.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/services/folder_sync_service.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/services/integrity_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/storage/services/position_service.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/storage/services/versioning_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/diff/test_diff_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/parser/test_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/parser/test_parser_tree_structure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/test_document_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/test_folder_sync_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/test_integrity_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/test_position_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/test_version_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/storage/test_versioning_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/parser_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/parser_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/txt_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/txt_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/report/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/prod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/document/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,11 +90,11 @@
       <recent name="$PROJECT_DIR$/src/parser/structure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/config" />
+      <recent name="$PROJECT_DIR$/src/storage" />
       <recent name="$PROJECT_DIR$/src/parser/document" />
       <recent name="$PROJECT_DIR$/src/parser/structure" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/tests/resources/versioned_files" />
-      <recent name="$PROJECT_DIR$/src/parser" />
     </key>
   </component>
   <component name="RunManager">
@@ -156,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773236330719</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat (parser + diff) : completed &amp; tested parser, diff">
+      <option name="closed" value="true" />
+      <created>1773326532427</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773326532427</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +173,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="feat (parser + diff) : completed &amp; tested parser, diff" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat (parser + diff) : completed &amp; tested parser, diff" />
   </component>
 </project>

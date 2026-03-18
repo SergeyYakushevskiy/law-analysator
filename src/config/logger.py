@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 from src.config.paths import LOG_DIR, LOGGER_CONFIG
-from src.settings import LOG_FILES_LIMIT, LOG_LEVEL
+from src.config.base import LOG_FILES_LIMIT, LOG_LEVEL
 
 
 def _create_log_file_path() -> Path:
