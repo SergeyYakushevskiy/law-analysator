@@ -5,15 +5,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ASSETS_DIR = BASE_DIR / "assets"
 LOG_DIR = BASE_DIR / "logs"
 SRC_DIR = BASE_DIR / "src"
-RESOURCES_DIR = BASE_DIR / "resources"
-
+STYLE_DIR = ASSETS_DIR / "styles"
 
 LOGGER_CONFIG = ASSETS_DIR / "logger.json"
 
-VERSIONS_NAME = ".versions"
 REPORTS_DIR = "reports"
 
-def get_resource(name):
-    if not (RESOURCES_DIR / name).exists():
-        raise FileNotFoundError(f"ресурс не найден: {RESOURCES_DIR}/{name}")
-    return RESOURCES_DIR / name
+def get_asset(name):
+    if not (ASSETS_DIR / name).exists():
+        raise FileNotFoundError(f"ресурс не найден: {ASSETS_DIR}/{name}")
+    return ASSETS_DIR / name

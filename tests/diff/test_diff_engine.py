@@ -1,13 +1,11 @@
-from pathlib import Path
 import pytest
 
-from src.config.paths import get_resource
-from src.parser.parser_factory import ParserFactory
+from src.config.paths import get_asset
+from src.parser.io.parser_factory import ParserFactory
 from src.diff.diff_engine import DiffEngine
 from src.diff.structure_diff_strategy import StructureDiffStrategy
 from src.diff.text_diff_strategy import TextDiffStrategy
-from src.diff.change_type import ChangeType
-from src.parser.document.node_type import NodeType
+from src.parser.model.node_type import NodeType
 
 @pytest.fixture(scope="module")
 def parsed_documents():
@@ -16,7 +14,7 @@ def parsed_documents():
     """
     parser_factory = ParserFactory()
     docs = []
-    versioned_files = get_resource('versioned_files')
+    versioned_files = get_asset('versioned_files')
     fl_152 = versioned_files / 'fl_152'
     for i in range(1, 4):
         file_path = fl_152 / f"test_{i}.txt"

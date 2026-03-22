@@ -2,7 +2,7 @@ from src.config.paths import LOG_DIR
 
 def ensure_directories():
     dirs = [
-        LOG_DIR
+        LOG_DIR,
     ]
     for dir in dirs:
         if not dir.exists():

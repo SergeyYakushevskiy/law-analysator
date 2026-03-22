@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 from src.config.paths import LOG_DIR, LOGGER_CONFIG
-from src.config.base import LOG_FILES_LIMIT, LOG_LEVEL
+from src.config import LOG_FILES_LIMIT, LOG_LEVEL
 
 
 def _create_log_file_path() -> Path:
@@ -14,13 +14,14 @@ def _create_log_file_path() -> Path:
 
 
 def _cleanup_old_logs():
+    if not LOG_DIR.exists():
+        return
     logs = sorted(
         LOG_DIR.glob("*.log"),
-        key=lambda p: p.stat().st_mtime,
         reverse=True
     )
 
-    for old_log in logs[LOG_FILES_LIMIT:]:
+    for old_log in logs[LOG_FILES_LIMIT - 1:]:
         old_log.unlink()
 
 
@@ -33,5 +34,5 @@ def setup_logging():
     config["handlers"]["file"]["level"] = LOG_LEVEL
     config["root"]["level"] = LOG_LEVEL
 
-    logging.config.dictConfig(config)
     _cleanup_old_logs()
+    logging.config.dictConfig(config)

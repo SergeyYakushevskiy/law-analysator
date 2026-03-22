@@ -2,14 +2,14 @@ from pathlib import Path
 
 import pytest
 
-from src.config.paths import get_resource
-from src.parser.parser_factory import ParserFactory
-from src.parser.document.document import ParsedDocument
-from src.parser.document.node_type import NodeType
+from src.config.paths import get_asset
+from src.parser.io.parser_factory import ParserFactory
+from src.parser.document import ParsedDocument
+from src.parser.model.node_type import NodeType
 
 
 def get_test_files():
-    versioned_files = get_resource('versioned_files')
+    versioned_files = get_asset('versioned_files')
     fl_152 = versioned_files / 'fl_152'
 
     files = []
