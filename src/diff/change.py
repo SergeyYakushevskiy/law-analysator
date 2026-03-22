@@ -1,10 +1,26 @@
-from dataclasses import dataclass
-from src.parser.document.node import DocumentNode
-from src.diff.change_type import ChangeType
+from dataclasses import dataclass, field
+from enum import Enum
+
+from src.parser.structure.builder import TreeNode
+
+
+class ChangeType(Enum):
+    INSERT = "inserted"
+    DELETE = "deleted"
+    MODIFY = "modified"
+
+    def __str__(self):
+        return self.value
 
 @dataclass
-class Change:
-    node: DocumentNode
+class TextChange:
     change_type: ChangeType
-    old_text: str | None = None
-    new_text: str | None = None
+    start: int
+    end: int
+
+@dataclass
+class NodeChange:
+    node: TreeNode
+    change_type: ChangeType
+    text_diff: list[TextChange] = field(default_factory=list)
+

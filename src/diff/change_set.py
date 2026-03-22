@@ -1,17 +1,19 @@
 import logging
 from dataclasses import dataclass, field
-from typing import List
-from src.diff.change import Change
-from src.diff.change_type import ChangeType
+
+from src.diff.change import NodeChange, ChangeType
 
 logger = logging.getLogger(__name__)
 
 @dataclass
 class ChangeSet:
-    changes: List[Change] = field(default_factory=list)
+    changes: list[NodeChange] = field(default_factory=list)
 
-    def add_change(self, change: Change):
+    def add_change(self, change: NodeChange):
         self.changes.append(change)
+
+    def add_all(self, changes: list[NodeChange]):
+        self.changes.extend(changes)
 
     def is_empty(self) -> bool:
         return not self.changes

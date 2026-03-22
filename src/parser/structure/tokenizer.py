@@ -1,42 +1,53 @@
+# structure/tokenizer.py
+
+from typing import List
+
 from src.parser.structure.token import Token
-from src.parser.structure.token_type import TokenType
-from src.parser.structure.token_patterns import (
-    SECTION_PATTERN,
-    CHAPTER_PATTERN,
-    ARTICLE_PATTERN,
-    POINT_PATTERN,
-    SUBPOINT_PATTERN
-)
+from src.parser.structure.token_type import TokenType, PATTERNS_CONFIG
 
 
 class Tokenizer:
+    def __init__(self):
+        self.line_num = 0
 
-    def tokenize(self, lines: list[str]) -> list[Token]:
-
+    def tokenize_text(self, text: str) -> List[Token]:
         tokens = []
-
-        for line in lines:
-
-            if m := SECTION_PATTERN.match(line):
-                tokens.append(Token(TokenType.SECTION, line, m.group(1)))
-                continue
-
-            if m := CHAPTER_PATTERN.match(line):
-                tokens.append(Token(TokenType.CHAPTER, line, m.group(1)))
-                continue
-
-            if m := ARTICLE_PATTERN.match(line):
-                tokens.append(Token(TokenType.ARTICLE, line, m.group(1)))
-                continue
-
-            if m := POINT_PATTERN.match(line):
-                tokens.append(Token(TokenType.POINT, line, m.group(1)))
-                continue
-
-            if m := SUBPOINT_PATTERN.match(line):
-                tokens.append(Token(TokenType.SUBPOINT, line, m.group(1)))
-                continue
-
-            tokens.append(Token(TokenType.TEXT, line))
-
+        for line in text.splitlines():
+            self.line_num += 1
+            # tokenize_line теперь всегда возвращает токен (даже TEXT)
+            token = self.tokenize_line(line)
+            tokens.append(token)
         return tokens
+
+    def tokenize_line(self, line: str) -> Token:
+        line = line.strip()
+
+        if not line:
+            return Token(
+                type=TokenType.TEXT,
+                raw_value="",
+                norm_id="",
+                level_class=-1,
+                line_number=self.line_num
+            )
+
+        for t_type, pattern, extractor, level_class in PATTERNS_CONFIG:  # ← Переименовали переменную
+            match = pattern.match(line)
+            if match:
+                norm_id = extractor(match)
+
+                return Token(
+                    type=t_type,
+                    raw_value=line,
+                    norm_id=norm_id,
+                    level_class=level_class,  # ← Прямо из PATTERNS_CONFIG
+                    line_number=self.line_num
+                )
+
+        return Token(
+            type=TokenType.TEXT,
+            raw_value=line,
+            norm_id="",
+            level_class=-1,
+            line_number=self.line_num
+        )
