@@ -1,0 +1,292 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    font-family: "Segoe UI", "Inter", sans-serif;
+    font-size: 13px;
+    color: #2c2c2c;
+}
+
+QWidget {
+    background-color: #f6f7fb;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+QLabel {
+    color: #2c2c2c;
+}
+
+QLabel#screen_title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+QLabel#section_header {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+QLabel#app_name_label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QLabel#version_label {
+    color: #888;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+QPushButton {
+    background-color: #e4e7ec;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #d7dbe3;
+}
+
+QPushButton:pressed {
+    background-color: #c7ccd6;
+}
+
+/* PRIMARY BUTTON */
+QPushButton#primary_button {
+    background-color: #4f7cff;
+    color: white;
+    font-weight: 500;
+}
+
+QPushButton#primary_button:hover {
+    background-color: #3f6df0;
+}
+
+QPushButton#primary_button:pressed {
+    background-color: #335ed6;
+}
+
+/* MENU BUTTON */
+QPushButton#menu_button {
+    text-align: left;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+QPushButton#menu_button:checked {
+    background-color: #4f7cff;
+    color: white;
+}
+
+/* TOOLBAR BUTTONS */
+QPushButton:checked {
+    background-color: #4f7cff;
+    color: white;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #4f7cff;
+}
+
+/* =========================
+   COMBOBOX
+========================= */
+
+QComboBox {
+    background-color: white;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+QComboBox:hover {
+    border: 1px solid #c5c9d3;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+QListWidget {
+    background-color: white;
+    border: 1px solid #e1e4ea;
+    border-radius: 8px;
+}
+
+QListWidget::item {
+    padding: 6px;
+}
+
+QListWidget::item:selected {
+    background-color: #4f7cff;
+    color: white;
+}
+
+/* =========================
+   TREE
+========================= */
+
+QTreeWidget {
+    background-color: white;
+    border: 1px solid #e1e4ea;
+    border-radius: 8px;
+}
+
+/* =========================
+   TEXT EDIT
+========================= */
+
+QPlainTextEdit {
+    background-color: #ffffff;
+    border: none;
+    padding: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background: #cfd4dc;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #b6bcc7;
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+    height: 0;
+}
+
+/* =========================
+   SPLITTER
+========================= */
+
+QSplitter::handle {
+    background-color: #e1e4ea;
+}
+
+QSplitter::handle:hover {
+    background-color: #cfd4dc;
+}
+
+/* =========================
+   MENU BAR
+========================= */
+
+QMenuBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e4ea;
+}
+
+QMenuBar::item {
+    padding: 6px 10px;
+}
+
+QMenuBar::item:selected {
+    background-color: #e9ecf3;
+}
+
+/* =========================
+   STATUS BAR
+========================= */
+
+QStatusBar {
+    background-color: #ffffff;
+    border-top: 1px solid #e1e4ea;
+}
+
+/* =========================
+   DIALOGS
+========================= */
+
+QDialog {
+    background-color: #f6f7fb;
+}
+
+/* =========================
+   CUSTOM COMPONENTS
+========================= */
+
+/* File selector */
+QWidget#file_selector {
+    background: transparent;
+}
+
+/* Path input */
+QWidget#path_input {
+    background: transparent;
+}
+
+/* Action buttons */
+QWidget#action_button {
+    background: transparent;
+}
+
+/* Side menu */
+QWidget#side_menu {
+    background-color: #ffffff;
+    border-right: 1px solid #e1e4ea;
+}
+
+/* Workspace */
+QWidget#workspace_screen {
+    background-color: #f6f7fb;
+}
+
+/* Stats panel */
+QWidget#stats_panel {
+    background-color: #ffffff;
+    border-left: 1px solid #e1e4ea;
+}
+
+/* Document tree */
+QWidget#document_tree {
+    background-color: white;
+}
+
+/* File list */
+QWidget#file_list {
+    background-color: white;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+QWidget {
+    /* fallback */
+}
+

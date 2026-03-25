@@ -1,77 +1,50 @@
-import logging
 import sys
+import logging
 from pathlib import Path
 
 from PyQt6.QtWidgets import QApplication
 
-from src.config.config_loader import ensure_directories
-from src.config.logger import setup_logging
-from src.parser.parser import DocumentParser
-from src.parser.structure.builder import TreeNode
-from src.service.diff_service import DiffService
-from src.ui.diff.diff_view import DiffViewWidget
+from src.application.services.project_service import ProjectService
+from src.infrastructure.config import setup_logging, settings, STYLE_DIR, loader
+from src.infrastructure.storage.metadata_repository import MetadataRepository
+from src.presentation.controllers.application_controller import ApplicationController
+from src.presentation.theme import ThemeManager
 
-
-def run_ui():
-    app = QApplication(sys.argv)
-    widget = DiffViewWidget()
-    parser = DocumentParser()
-    diff = DiffService()
-
-    folder = Path("/devdata/projects/law-analysator/resources/versioned_files/fl_152")
-    first = parser.parse(folder / 'test_1.txt')
-    second = parser.parse(folder / 'test_2.txt')
-
-    changes = diff.diff(first, second)
-
-    widget.set_documents(first, second, changes)
-    widget.show()
-
-    app.exec()
-
-
-def restore_text_from_tree(node: TreeNode, indent_size: int = 0) -> str:
-    lines = []
-
-    if node.content:
-        indent = "\t" * indent_size
-        lines.append(f"{indent}{node.content}")
-
-    for child in node.children:
-        child_text = restore_text_from_tree(child, indent_size + 1)
-        if child_text:
-            lines.append(child_text)
-
-    return "\n".join(lines)
-
-def print_tree_structure(node, depth=0, max_depth=3):
-    """Выводит структуру дерева без контента"""
-    indent = "  " * depth
-    print(f"{indent}{node.node_type.name}:{node.id} (children: {len(node.children)})")
-    if depth < max_depth:
-        for child in node.children:
-            print_tree_structure(child, depth + 1, max_depth)
 
 def main():
+    setup_logging(settings)
     logger = logging.getLogger(__name__)
-    logger.info("запуск приложения")
+    logger.info(f"запуск {settings.app_name} v{settings.version}")
 
-    # parser = DocumentParser()
-    # diff = DiffManager()
-    #
-    # folder = Path("/devdata/projects/law-analysator/resources/versioned_files/fl_152")
-    # first = parser.parse(folder / 'test_2.txt')
-    # second = parser.parse(folder / 'test_3.txt')
-    #
-    # print_tree_structure(second.root)
-    # changes = diff.diff(first, second)
+    app = QApplication(sys.argv)
+    app.setApplicationName(settings.app_name)
 
-    run_ui()
+    theme_manager = ThemeManager(STYLE_DIR)
+    theme_manager.switch_theme(app, settings.theme)
 
-    logger.info('приложение успешно запущено')
+    def repo_factory(path: Path) -> MetadataRepository:
+        return MetadataRepository(path)
+
+    project_service = ProjectService(repository_factory=repo_factory)
+
+    last_project_path = settings.last_project_path
+
+    if last_project_path:
+        last_project_path = Path(last_project_path)
+
+    controller = ApplicationController(
+        app=app,
+        settings=settings,
+        save_settings=loader.save,
+        theme_manager=theme_manager,
+        project_service=project_service,
+        last_project_path=last_project_path
+    )
+
+    controller.start()
+
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
-    ensure_directories()
-    setup_logging()
     main()
