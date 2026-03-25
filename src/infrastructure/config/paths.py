@@ -3,6 +3,8 @@ import sys
 
 def get_base_dir() -> Path:
     if getattr(sys, 'frozen', False):
+        if hasattr(sys, '_MEIPASS'):
+            return Path(sys._MEIPASS)
         return Path(sys.executable).parent
     else:
         return Path(__file__).resolve().parent.parent.parent.parent
