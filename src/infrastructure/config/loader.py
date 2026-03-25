@@ -3,10 +3,11 @@ import os
 from typing import Optional
 
 from src.infrastructure.config.core import AppSettings, CONFIG_FILE_NAME
-from src.infrastructure.config.paths import BASE_DIR
+from src.infrastructure.config.paths import get_user_data_dir
+
 
 class ConfigLoader:
-    config_path = BASE_DIR / CONFIG_FILE_NAME
+    config_path = get_user_data_dir() / CONFIG_FILE_NAME
 
     def __init__(self):
         self._settings: Optional[AppSettings] = None
